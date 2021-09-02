@@ -9,7 +9,7 @@ const searchBook = () => {
         // please write something to display
 
     } else {
-        const url = `http://openlibrary.org/search.json?q=${searchText}`;
+        const url = `https://openlibrary.org/search.json?q=${searchText}`;
         fetch(url)
             .then(res => res.json())
             .then(data => displaySearchResult(data.docs));
@@ -29,7 +29,7 @@ const displaySearchResult = (docs) => {
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
-          <div class="card h-100 shadow p-4 m-3">
+          <div class="card h-100 shadow  m-2">
              <img src="https://covers.openlibrary.org/b/id/${doc.cover_i}-M.jpg" class="card-img-top" alt="...">
              <div class="card-body">
                 <h2 class="card-title">Title: ${doc.title}</h2>
